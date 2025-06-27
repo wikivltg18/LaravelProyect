@@ -141,7 +141,7 @@
         <div class="container">
             <div class="row ">
                 <div class="col-md-6">
-                    <img src="{{ asset('vendors/images/logo_himalaya_Blue-10 1.png') }}" alt="logo_himalaya">
+                    <img src="{{ asset('vendors/images/logo_himalaya_Blue-10 1.png') }}" class="img-logo " alt="logo_himalaya">
                     <div class="bg-white login-box box-shadow" >
                         <h2>Las contraseñas se olvidan, <br> las grandes ideas no.</h2>
                         <h6 class="mb-20 text-white">Restablécela aquí.</h6>
@@ -190,7 +190,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-md-6 d-flex justify-content-center">
+                <div class="col-md-6">
                     <img src="{{ asset('vendors/images/photo_right_blue.png') }}" class="img-right" alt="" srcset="">
                 </div>
             </div>

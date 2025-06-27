@@ -23,7 +23,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-        
+
+
+
     <style>
         .login-box {
             background: transparent !important;
@@ -142,6 +144,7 @@
             color: #003B7B;
             font-weight: 700;
             font-weight: bolder;
+            padding-left: 37px;
         }
 
         .row-texts>div:nth-child(2)>.texts-rows:hover {
@@ -194,7 +197,7 @@
     <div class="modal fade" id="warning-modal-password" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm modal-dialog-centered">
             <div class="modal-content bg-warning">
-                <div class="text-center modal-body">
+                <div class="modal-body text-center">
                     <h3 class="mb-15"><i class="fa fa-exclamation-triangle"></i> Advertencia</h3>
                     <p class="text-center text-black">
                         {{ session('messageEmail') }}.
@@ -262,12 +265,12 @@
                     </div>
                     @enderror
 
-                    <div class="pb-3 row row-texts">
-                        <div class="col-12 col-md-8 col-lg-6">
+                    <div class="row pb-30 row-texts">
+                        <div class="col-md-6">
                             <input type="checkbox" name="remember" class="px-5 input-checkbox">
                             <label name="remember" class="pl-2 texts-rows" for="customCheck1">Mantenerme conectado</label>
                         </div>
-                        <div class="col-12 col-md-4 col-lg-6 d-flex justify-content-center">
+                        <div class="col-md-6">
                             <a href="{{ url('forgotPassword') }}" class="texts-rows">¿Olvido su contraseña?</a>
                         </div>
                     </div>
@@ -294,7 +297,7 @@
                     </form>
                 </div>
             </div>
-            <div class="pt-3 col-md-6 d-flex justify-content-center">
+            <div class="col-md-6">
                 <img src="{{ asset('vendors/images/photo_right.png') }}" alt="img" class="img-right">
             </div>
         </div>

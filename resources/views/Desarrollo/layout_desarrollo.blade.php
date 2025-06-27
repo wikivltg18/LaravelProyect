@@ -143,38 +143,12 @@
         .mCustomScrollBox {
             background-color: #ffff;
         }
-
-        .pre-loader {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.loader-progress {
-    width: 100px;
-    height: 4px;
-    background: #ddd;
-    margin: 10px auto;
-    position: relative;
-}
-
-.bar {
-    width: 0%;
-    height: 100%;
-    background: #00BDF8;
-    transition: width 0.3s;
-}
     </style>
 
 </head>
 
 <body>
-    <div class="pre-loader">
+    {{-- <div class="pre-loader">
         <div class="pre-loader-box">
             <div class="loader-logo"><img src="{{ asset('vendors/images/deskapp-logo.svg') }}" alt=""></div>
             <div class='loader-progress' id="progress_div">
@@ -185,7 +159,7 @@
                 Loading...
             </div>
         </div>
-    </div> 
+    </div> --}}
 
     <div class="header">
         <div class="header-left">
@@ -374,10 +348,9 @@
             <img src="{{ url(asset('vendors/images/logo_azul.png')) }}" class="py-3 mx-auto d-block" alt="">
             <div class="sidebar-menu">
                 <ul id="accordion-menu">
-                    
                     <li class="dropdown">
                         <a href="{{ url('superadmin/home') }}" class="dropdown-toggle no-arrow">
-                            <span class="micon icon-home"></span><span>Inicio</span>
+                            <span class="micon icon-home"></span><span>Home</span>
                         </a>
                     </li>
                     <li class="dropdown">
@@ -387,20 +360,23 @@
                         </a>
                     </li>
                     <li class="dropdown">
-                    <a href="{{ url('superadmin/usuariosEquipo') }}" class="no-arrow dropdown-toggle "><span class="micon icon-equipo"></span>Usuarios</a>
+                       <a href="{{ url('superadmin/usuariosEquipo') }}" class="no-arrow dropdown-toggle "><span class="micon icon-equipo"></span>Usuarios</a>
                     </li>
-                    <li class="dropdown">
-                    <a href="{{ url('superadmin/Areas') }}" class="no-arrow dropdown-toggle "><span class="micon icon-equipo"></span>Área</a>
-                    </li>
-                    <li class="dropdown">
-                    <a href="{{ url('superadmin/servicios') }}" class="no-arrow dropdown-toggle "><span class="micon icon-equipo"></span>servicios</a>
-                    </li>
-                    <li class="dropdown">
-                    <a href="{{ url('superadmin/roles') }}" class="no-arrow dropdown-toggle "><span class="micon icon-equipo"></span>Roles</a>
+                         <li class="dropdown">
+                        <a class="dropdown-toggle">
+                            <span class="micon icon-copy fi-wrench"></span><span>Herramientas</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="{{ url('superadmin/Areas') }}">Areas</a></li>
+                        </ul>
+                        <ul class="submenu">
+                            <li><a href="{{ url('superadmin/servicios') }}">Servicios</a></li>
+                        </ul>
+                        <ul class="submenu">
+                            <li><a href="{{ url('superadmin/roles') }}">Roles</a></li>
+                        </ul>
                     </li>
                 </ul>
-
-                
             </div>
         </div>
     </div>
@@ -440,24 +416,6 @@
 
     @stack('JS')
 
-    <script>
-    window.addEventListener('load', function () {
-        const preloader = document.querySelector('.pre-loader');
-        const bar = document.getElementById('bar1');
-        const percent = document.getElementById('percent1');
-
-        let progress = 0;
-        let interval = setInterval(() => {
-            progress += 10;
-            bar.style.width = progress + '%';
-            percent.innerText = progress + '%';
-            if (progress >= 100) {
-                clearInterval(interval);
-                preloader.style.display = 'none';
-            }
-        }, 100);
-    });
-</script>
 </body>
 
 </html>
